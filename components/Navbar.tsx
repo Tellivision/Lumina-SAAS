@@ -1,16 +1,13 @@
 
-import React, { useState } from 'react';
-import { Sparkles, Menu, X } from 'lucide-react';
+import React from 'react';
+import { Sparkles } from 'lucide-react';
 
 const Navbar: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
     }
   };
 
@@ -66,59 +63,6 @@ const Navbar: React.FC = () => {
           </span>
         </button>
       </div>
-
-      {/* Mobile Menu Toggle */}
-      <button 
-        className="md:hidden text-cool-gray hover:text-white z-50 p-2"
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-charcoal/98 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 md:hidden animate-on-scroll [animation:fadeSlideIn_0.3s_ease-out_both] p-4">
-          <a 
-            href="#product" 
-            onClick={(e) => scrollToSection(e, 'product')}
-            className="text-xl font-medium tracking-widest uppercase text-white hover:text-lumina-500 transition-colors"
-          >
-            Home
-          </a>
-          <a 
-            href="#features" 
-            onClick={(e) => scrollToSection(e, 'features')}
-            className="text-xl font-medium tracking-widest uppercase text-white hover:text-lumina-500 transition-colors"
-          >
-            Features
-          </a>
-          <a 
-            href="#integration" 
-            onClick={(e) => scrollToSection(e, 'integration')}
-            className="text-xl font-medium tracking-widest uppercase text-white hover:text-lumina-500 transition-colors"
-          >
-            Integration
-          </a>
-          <a 
-            href="#workflow" 
-            onClick={(e) => scrollToSection(e, 'workflow')}
-            className="text-xl font-medium tracking-widest uppercase text-white hover:text-lumina-500 transition-colors"
-          >
-            Workflow
-          </a>
-          
-          <div className="h-px w-24 bg-white/10 my-6"></div>
-
-          <a href="#" className="text-lg font-medium text-cool-gray hover:text-white transition-colors">Login</a>
-          <button type="button" className="button-custom scale-105">
-            <span className="inner flex gap-2">
-              <Sparkles className="w-4 h-4" />
-              Get Started
-            </span>
-          </button>
-        </div>
-      )}
     </nav>
   );
 };

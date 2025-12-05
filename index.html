@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumina - Creative Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Configure Tailwind to include custom 3D transform utilities and colors
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: '#1C1E21',
+              'cool-gray': '#D0D3D6',
+              'off-white': '#FAFAFA',
+              lumina: {
+                50: '#fff0f3',
+                100: '#ffe3e8',
+                200: '#ffc9d2',
+                300: '#ff9fb0',
+                400: '#ff5c75',
+                500: '#FF2D55', // Signal Red
+                600: '#db1b40',
+                700: '#b51233',
+                800: '#96122d',
+                900: '#7f152a',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'spin-slow': 'spin 8s linear infinite',
+              'beam-1': 'beam-fall 6s linear infinite',
+              'beam-2': 'beam-fall 8s linear infinite',
+              'beam-3': 'beam-fall 7s linear infinite',
+            },
+            keyframes: {
+              'beam-fall': {
+                '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                '5%': { opacity: '0.5' },
+                '50%': { opacity: '1' },
+                '95%': { opacity: '0.5' },
+                '100%': { transform: 'translateY(120vh)', opacity: '0' },
+              }
+            }
+          },
+        },
+        plugins: [
+          function({ addUtilities }) {
+            const rotateXUtilities = {};
+            const rotateYUtilities = {};
+            const rotateZUtilities = {};
+            const rotateValues = [0, 5, 10, 15, 20, 30, 45, 75];
+            
+            rotateValues.forEach((value) => {
+              rotateXUtilities[`.rotate-x-${value}`] = {
+                '--tw-rotate-x': `${value}deg`,
+                transform: `translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), var(--tw-translate-z, 0)) rotateX(var(--tw-rotate-x, 0)) rotateY(var(--tw-rotate-y, 0)) rotateZ(var(--tw-rotate-z, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1))`
+              };
+              if (value !== 0) {
+                rotateXUtilities[`.-rotate-x-${value}`] = {
+                  '--tw-rotate-x': `-${value}deg`,
+                  transform: `translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), var(--tw-translate-z, 0)) rotateX(var(--tw-rotate-x, 0)) rotateY(var(--tw-rotate-y, 0)) rotateZ(var(--tw-rotate-z, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1))`
+                };
+              }
+            });
+
+            const perspectiveUtilities = {
+              ".perspective-none": { perspective: "none" },
+              ".perspective-dramatic": { perspective: "100px" },
+              ".perspective-near": { perspective: "300px" },
+              ".perspective-normal": { perspective: "500px" },
+              ".perspective-midrange": { perspective: "800px" },
+              ".perspective-distant": { perspective: "1200px" },
+            };
+            
+            addUtilities({
+              ...rotateXUtilities,
+              ...rotateYUtilities,
+              ...rotateZUtilities,
+              ...perspectiveUtilities,
+            });
+          }
+        ]
+      };
+    </script>
+    <style>
+      body {
+        background-color: #1C1E21;
+        color: #FAFAFA;
+      }
+      ::-webkit-scrollbar {
+        width: 0px;
+      }
+      
+      /* Gradient Button Animation */
+      .button-custom {
+        cursor: pointer;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.25s ease;
+        background: radial-gradient(65.28% 65.28% at 50% 100%, rgba(255, 45, 85, 0.8) 0%, rgba(255, 45, 85, 0) 100%), linear-gradient(0deg, #FF2D55, #FF2D55);
+        border-radius: 12px;
+        border: none;
+        padding: 10px 24px;
+        min-height: 44px;
+      }
+      .button-custom::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: linear-gradient(177.95deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+        border-radius: 12px;
+        transition: all 0.5s ease-in-out;
+        z-index: 0;
+      }
+      .button-custom::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background: radial-gradient(65.28% 65.28% at 50% 100%, rgba(255, 45, 85, 0.8) 0%, rgba(255, 45, 85, 0) 100%), linear-gradient(0deg, #FF2D55, #FF2D55);
+        border-radius: 12px;
+        transition: all 0.5s ease-in-out;
+        z-index: 0;
+      }
+      .button-custom:hover .inner svg.icon { transform: translateX(2px); }
+      .button-custom .inner { z-index: 2; gap: 6px; position: relative; width: 100%; color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 500; }
+      
+      /* Particle Animation inside Button */
+      .points_wrapper { overflow: hidden; width: 100%; height: 100%; pointer-events: none; position: absolute; z-index: 1; }
+      .points_wrapper .point { bottom: -10px; position: absolute; animation: floating-points infinite ease-in-out; pointer-events: none; width: 2px; height: 2px; background-color: #fff; border-radius: 9999px; }
+      @keyframes floating-points { 0% { transform: translateY(0); } 85% { opacity: 0; } 100% { transform: translateY(-55px); opacity: 0; } }
+      .points_wrapper .point:nth-child(1) { left: 10%; opacity: 1; animation-duration: 2.35s; animation-delay: 0.2s; }
+      .points_wrapper .point:nth-child(2) { left: 30%; opacity: 0.7; animation-duration: 2.5s; animation-delay: 0.5s; }
+      .points_wrapper .point:nth-child(3) { left: 25%; opacity: 0.8; animation-duration: 2.2s; animation-delay: 0.1s; }
+      .points_wrapper .point:nth-child(4) { left: 44%; opacity: 0.6; animation-duration: 2.05s; }
+      .points_wrapper .point:nth-child(5) { left: 50%; opacity: 1; animation-duration: 1.9s; }
+      .points_wrapper .point:nth-child(6) { left: 75%; opacity: 0.5; animation-duration: 1.5s; animation-delay: 1.5s; }
+      .points_wrapper .point:nth-child(7) { left: 88%; opacity: 0.9; animation-duration: 2.2s; animation-delay: 0.2s; }
+
+      /* Scroll Animation Logic */
+      @keyframes fadeSlideIn { 
+        0% { opacity: 0; transform: translateY(30px); filter: blur(8px); } 
+        100% { opacity: 1; transform: translateY(0); filter: blur(0px); } 
+      }
+      .animate-on-scroll { animation-play-state: paused !important; }
+      .animate-on-scroll.animate { animation-play-state: running !important; }
+    </style>
+    <script>
+      (function(){
+        const once=true;
+        if(!window.__inViewIO){
+          window.__inViewIO=new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+              if(entry.isIntersecting){
+                entry.target.classList.add("animate");
+                if(once) window.__inViewIO.unobserve(entry.target)
+              }
+            })
+          },{threshold:0.15,rootMargin:"0px 0px -10% 0px"})
+        }
+        window.initInViewAnimations=function(selector=".animate-on-scroll"){
+          document.querySelectorAll(selector).forEach((el)=>{
+            window.__inViewIO.observe(el)
+          })
+        };
+        document.addEventListener("DOMContentLoaded",()=>initInViewAnimations())
+      })();
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

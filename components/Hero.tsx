@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles, Layers, Monitor, Play } from 'lucide-react';
 
@@ -5,7 +6,7 @@ const Hero: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState<'design' | 'workspace'>('design');
 
   return (
-    <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 pt-24 pb-10 items-center relative z-10">
+    <div id="product" className="flex-1 grid grid-cols-1 lg:grid-cols-12 pt-24 pb-10 items-center relative z-10">
       {/* Left: Title & Description */}
       <div className="col-span-1 lg:col-span-6 pl-6 md:pl-10 pt-10 lg:pt-0 flex flex-col justify-center">
         <div className="inline-flex gap-2 animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.1s_both] text-lumina-500 mb-8 items-center">

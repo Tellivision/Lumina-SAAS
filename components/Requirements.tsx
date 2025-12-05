@@ -31,7 +31,7 @@ const REQUIREMENTS_DATA = [
 
 const Requirements: React.FC = () => {
     return (
-        <div className="z-10 md:px-10 lg:py-32 w-full max-w-7xl border-white/5 border-t mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 relative">
+        <div id="integration" className="z-10 md:px-10 lg:py-32 w-full max-w-7xl border-white/5 border-t mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-lumina-500/5 blur-[100px] -z-10 rounded-full pointer-events-none"></div>
 
             <div className="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">

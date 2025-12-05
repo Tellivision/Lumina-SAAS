@@ -24,20 +24,17 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="hidden md:flex gap-8 items-center">
-        <a href="#" className="text-xs font-medium tracking-widest uppercase hover:text-off-white transition-colors text-cool-gray">
+        <a href="#product" className="text-xs font-medium tracking-widest uppercase hover:text-off-white transition-colors text-cool-gray">
           Product
         </a>
         <a href="#features" className="uppercase hover:text-off-white transition-colors text-xs font-medium text-cool-gray tracking-widest">
           Solutions
         </a>
-        <a href="#pricing" className="uppercase hover:text-off-white transition-colors text-xs font-medium text-cool-gray tracking-widest">
-          Pricing
+        <a href="#integration" className="uppercase hover:text-off-white transition-colors text-xs font-medium text-cool-gray tracking-widest">
+          Integration
         </a>
         <a href="#workflow" className="uppercase hover:text-off-white transition-colors text-xs font-medium text-cool-gray tracking-widest">
           Workflow
-        </a>
-        <a href="#resources" className="uppercase hover:text-off-white transition-colors text-xs font-medium text-cool-gray tracking-widest">
-          Resources
         </a>
       </div>
 

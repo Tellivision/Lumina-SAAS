@@ -34,37 +34,6 @@ const Footer: React.FC = () => {
                     <div className="h-px bg-gradient-to-l from-transparent via-white/30 to-white/60 flex-1 shadow-[0_1px_2px_rgba(255,255,255,0.1)]"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 w-full mb-32 text-center md:text-left relative z-20">
-                    <div className="flex flex-col gap-8 items-center md:items-start group">
-                        <h3 className="font-medium text-sm uppercase tracking-widest text-lumina-500 border-b border-lumina-500/20 pb-3 w-full md:w-auto group-hover:border-lumina-500/50 transition-colors">Headquarters</h3>
-                        <div className="space-y-3 text-cool-gray font-normal text-lg leading-relaxed group-hover:text-white transition-colors">
-                            <p className="font-medium text-white">Lumina Inc.</p>
-                            <p>88 Townsend St.</p>
-                            <p>San Francisco, CA 94107</p>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col gap-8 items-center md:items-start group">
-                        <h3 className="font-medium text-sm uppercase tracking-widest text-lumina-500 border-b border-lumina-500/20 pb-3 w-full md:w-auto group-hover:border-lumina-500/50 transition-colors">Contact</h3>
-                        <div className="space-y-3 text-cool-gray font-normal text-lg leading-relaxed group-hover:text-white transition-colors">
-                            <p>Sales: <span className="text-white tabular-nums tracking-wide">+1 (555) 123-4567</span></p>
-                            <a href="mailto:hello@lumina.design" className="block mt-1 hover:text-lumina-400 transition-colors underline decoration-white/10 hover:decoration-lumina-400/50 underline-offset-4 decoration-1">hello@lumina.design</a>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col gap-8 items-center md:items-start group">
-                        <h3 className="font-medium text-sm uppercase tracking-widest text-lumina-500 border-b border-lumina-500/20 pb-3 w-full md:w-auto group-hover:border-lumina-500/50 transition-colors">Legal</h3>
-                        <div className="space-y-4 text-cool-gray font-normal text-lg leading-relaxed group-hover:text-white transition-colors">
-                            <div className="flex flex-col">
-                                <a href="#" className="hover:text-lumina-400 transition-colors">Terms of Service</a>
-                            </div>
-                            <div className="flex flex-col">
-                                <a href="#" className="hover:text-lumina-400 transition-colors">Privacy Policy</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div className="w-full border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8 text-sm font-medium text-cool-gray">
                     <p className="hover:text-neutral-300 transition-colors cursor-default">© 2025 Lumina Inc. All rights reserved.</p>
                     <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">

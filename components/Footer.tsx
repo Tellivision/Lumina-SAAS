@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Settings, Mail, User, MessageSquare, ArrowRight } from 'lucide-react';
 
@@ -35,7 +34,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Contact Form Section */}
-                <div className="w-full max-w-5xl mb-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                <div className="w-full max-w-5xl mb-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.3s_both]">
                     {/* Text Side */}
                     <div className="flex flex-col gap-6 pt-4">
                         <h3 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">

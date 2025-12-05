@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Settings } from 'lucide-react';
+import { Settings, Mail, User, MessageSquare, ArrowRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
     return (
@@ -32,6 +32,60 @@ const Footer: React.FC = () => {
                         Design the Future
                     </h2>
                     <div className="h-px bg-gradient-to-l from-transparent via-white/30 to-white/60 flex-1 shadow-[0_1px_2px_rgba(255,255,255,0.1)]"></div>
+                </div>
+
+                {/* Contact Form Section */}
+                <div className="w-full max-w-5xl mb-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                    {/* Text Side */}
+                    <div className="flex flex-col gap-6 pt-4">
+                        <h3 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
+                            Get in touch
+                        </h3>
+                        <p className="text-cool-gray text-lg leading-relaxed">
+                            Have questions about Lumina? We're here to help you get started with the next generation of creative tools.
+                        </p>
+                        <a href="mailto:hello@lumina.design" className="flex items-center gap-3 text-lumina-400 hover:text-lumina-300 transition-colors mt-2 group w-fit">
+                            <div className="w-10 h-10 rounded-full bg-lumina-500/10 flex items-center justify-center border border-lumina-500/20 group-hover:bg-lumina-500/20 transition-colors">
+                                <Mail className="w-5 h-5" />
+                            </div>
+                            <span className="font-medium">hello@lumina.design</span>
+                        </a>
+                    </div>
+
+                    {/* Form Side */}
+                    <form className="flex flex-col gap-4 w-full bg-white/5 p-6 md:p-8 rounded-3xl border border-white/5 backdrop-blur-sm">
+                        <div className="relative">
+                            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-cool-gray/50" />
+                            <input 
+                                type="text" 
+                                placeholder="Your Name" 
+                                className="w-full bg-black/20 border border-white/10 rounded-xl pl-12 pr-4 py-3.5 text-white placeholder-cool-gray/50 focus:outline-none focus:border-lumina-500/50 focus:ring-1 focus:ring-lumina-500/20 transition-all"
+                            />
+                        </div>
+                        <div className="relative">
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-cool-gray/50" />
+                            <input 
+                                type="email" 
+                                placeholder="Email Address" 
+                                className="w-full bg-black/20 border border-white/10 rounded-xl pl-12 pr-4 py-3.5 text-white placeholder-cool-gray/50 focus:outline-none focus:border-lumina-500/50 focus:ring-1 focus:ring-lumina-500/20 transition-all"
+                            />
+                        </div>
+                        <div className="relative">
+                            <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-cool-gray/50" />
+                            <textarea 
+                                placeholder="How can we help?" 
+                                rows={4}
+                                className="w-full bg-black/20 border border-white/10 rounded-xl pl-12 pr-4 py-3.5 text-white placeholder-cool-gray/50 focus:outline-none focus:border-lumina-500/50 focus:ring-1 focus:ring-lumina-500/20 transition-all resize-none"
+                            />
+                        </div>
+                        <button 
+                            type="button" 
+                            className="w-full bg-gradient-to-r from-lumina-600 to-lumina-500 hover:from-lumina-500 hover:to-lumina-400 text-white font-semibold shadow-lg shadow-lumina-500/20 rounded-xl px-6 py-3.5 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 mt-2"
+                        >
+                            Send Message
+                            <ArrowRight className="w-4 h-4" />
+                        </button>
+                    </form>
                 </div>
 
                 <div className="w-full border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8 text-sm font-medium text-cool-gray">

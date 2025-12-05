@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Settings, Mail, User, MessageSquare, ArrowRight } from 'lucide-react';
 
@@ -7,9 +8,9 @@ const Footer: React.FC = () => {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[1000px] h-[400px] bg-lumina-500/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-lumina-500/5 blur-[100px] rounded-full pointer-events-none"></div>
 
-            <div className="md:px-10 z-10 flex flex-col max-w-7xl mr-auto ml-auto pt-32 pr-6 pb-16 pl-6 relative items-center">
+            <div className="px-6 md:px-10 z-10 flex flex-col max-w-7xl mr-auto ml-auto pt-16 md:pt-32 pr-6 pb-16 pl-6 relative items-center">
                 
-                <div className="mb-24 hover:scale-105 transition-transform duration-300 group cursor-default">
+                <div className="mb-16 md:mb-24 hover:scale-105 transition-transform duration-300 group cursor-default">
                     <div className="flex items-center gap-4 justify-center">
                         <div className="w-12 h-12 bg-lumina-500 rounded-xl flex items-center justify-center relative overflow-hidden flex-shrink-0 shadow-xl shadow-lumina-500/20">
                             <svg viewBox="0 0 24 24" className="w-full h-full text-white p-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -25,25 +26,26 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center w-full max-w-6xl gap-8 mb-32 opacity-95 relative">
+                {/* Main Headline - Mobile Optimized */}
+                <div className="flex items-center w-full max-w-6xl gap-4 md:gap-8 mb-16 md:mb-32 opacity-95 relative">
                     <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-white/60 flex-1 shadow-[0_1px_2px_rgba(255,255,255,0.1)]"></div>
-                    <h2 className="text-3xl md:text-5xl font-serif font-medium uppercase tracking-[0.15em] text-center text-off-white drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] whitespace-nowrap px-4 leading-none relative z-10">
+                    <h2 className="text-2xl md:text-5xl font-serif font-medium uppercase tracking-[0.15em] text-center text-off-white drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] px-2 md:px-4 leading-tight relative z-10 whitespace-normal break-words w-full max-w-[80vw] md:max-w-none">
                         Design the Future
                     </h2>
                     <div className="h-px bg-gradient-to-l from-transparent via-white/30 to-white/60 flex-1 shadow-[0_1px_2px_rgba(255,255,255,0.1)]"></div>
                 </div>
 
-                {/* Contact Form Section */}
-                <div className="w-full max-w-5xl mb-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.3s_both]">
+                {/* Contact Form Section - Mobile Stacked */}
+                <div className="w-full max-w-5xl mb-16 md:mb-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.3s_both]">
                     {/* Text Side */}
-                    <div className="flex flex-col gap-6 pt-4">
+                    <div className="flex flex-col gap-6 pt-4 text-center lg:text-left">
                         <h3 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
                             Get in touch
                         </h3>
                         <p className="text-cool-gray text-lg leading-relaxed">
                             Have questions about Lumina? We're here to help you get started with the next generation of creative tools.
                         </p>
-                        <a href="mailto:hello@lumina.design" className="flex items-center gap-3 text-lumina-400 hover:text-lumina-300 transition-colors mt-2 group w-fit">
+                        <a href="mailto:hello@lumina.design" className="flex items-center justify-center lg:justify-start gap-3 text-lumina-400 hover:text-lumina-300 transition-colors mt-2 group w-full lg:w-fit">
                             <div className="w-10 h-10 rounded-full bg-lumina-500/10 flex items-center justify-center border border-lumina-500/20 group-hover:bg-lumina-500/20 transition-colors">
                                 <Mail className="w-5 h-5" />
                             </div>
@@ -88,7 +90,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="w-full border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8 text-sm font-medium text-cool-gray">
-                    <p className="hover:text-neutral-300 transition-colors cursor-default">© 2025 Lumina Inc. All rights reserved.</p>
+                    <p className="hover:text-neutral-300 transition-colors cursor-default text-center md:text-left">© 2025 Lumina Inc. All rights reserved.</p>
                     <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
                         <a href="#" className="hover:text-white transition-colors hover:underline decoration-white/20 underline-offset-4">Twitter</a>
                         <a href="#" className="hover:text-white transition-colors hover:underline decoration-white/20 underline-offset-4">LinkedIn</a>

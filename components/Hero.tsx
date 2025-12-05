@@ -6,26 +6,26 @@ const Hero: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState<'design' | 'workspace'>('design');
 
   return (
-    <div id="product" className="flex-1 grid grid-cols-1 lg:grid-cols-12 pt-24 pb-10 items-center relative z-10">
+    <div id="product" className="flex-1 grid grid-cols-1 lg:grid-cols-12 pt-12 md:pt-24 pb-10 items-center relative z-10">
       {/* Left: Title & Description */}
-      <div className="col-span-1 lg:col-span-6 pl-6 md:pl-10 pt-10 lg:pt-0 flex flex-col justify-center">
-        <div className="inline-flex gap-2 animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.1s_both] text-lumina-500 mb-8 items-center">
+      <div className="col-span-1 lg:col-span-6 pl-6 md:pl-10 pt-6 lg:pt-0 flex flex-col justify-center">
+        <div className="inline-flex gap-2 animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.1s_both] text-lumina-500 mb-6 md:mb-8 items-center">
              <span className="w-2 h-2 rounded-full bg-lumina-500 animate-pulse"></span>
              <span className="uppercase text-xs font-bold text-lumina-500/80 tracking-widest">Next Gen Creative Suite</span>
         </div>
 
-        <h1 className="md:text-7xl lg:text-8xl leading-[0.9] animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.2s_both] text-6xl font-medium text-off-white tracking-tighter mb-6">
+        <h1 className="text-4xl md:text-6xl lg:text-8xl leading-[1.1] md:leading-[0.9] animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.2s_both] font-medium text-off-white tracking-tighter mb-4 md:mb-6">
           Unleash your <br/>
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-off-white via-cool-gray to-cool-gray/50">
             Creative Flow.
           </span>
         </h1>
 
-        <p className="leading-relaxed animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.35s_both] text-lg font-medium text-cool-gray max-w-lg">
+        <p className="leading-relaxed animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.3s_both] text-base md:text-lg font-medium text-cool-gray max-w-lg pr-6 md:pr-0">
           Whether it's vector design, 3D modeling, or interactive prototyping – Lumina empowers you. Experience the future of collaborative design with real-time sync.
         </p>
 
-        <div className="flex flex-wrap gap-6 animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.5s_both] mt-10 items-center">
+        <div className="flex flex-wrap gap-4 md:gap-6 animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.5s_both] mt-8 md:mt-10 items-center">
           <a href="#" className="group isolate inline-flex cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_10px_rgba(255,45,85,0.45)] bg-gradient-to-b from-white/20 via-white/0 to-white/5 rounded-xl relative shadow-[0_0_25px_rgba(255,45,85,0.3),0_8px_40px_rgba(255,45,85,0.15)]">
             <div className="absolute inset-0 overflow-hidden rounded-xl">
               <div className="absolute inset-[-100%] w-[300%] h-[300%] left-[-100%] top-[-100%] animate-spin-slow" style={{ background: 'conic-gradient(from 0deg, transparent 0deg, transparent 80deg, rgba(255,45,85,0.8) 180deg, transparent 280deg, transparent 360deg)' }}>
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Right: Preview & Steps */}
-      <div className="col-span-1 lg:col-span-6 md:pr-10 flex flex-col lg:pt-20 h-full pt-10 pr-6 items-end justify-center relative z-10">
+      <div className="col-span-1 lg:col-span-6 md:pr-10 flex flex-col lg:pt-20 h-full pt-10 px-6 md:px-0 items-end justify-center relative z-10">
         <div className="overflow-hidden group lg:mr-0 bg-[#0a0a0a]/50 w-full max-w-lg border-white/10 border rounded-2xl mr-auto ml-auto p-2.5 relative shadow-2xl backdrop-blur-sm animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.2s_both]">
           
           {/* Slides Viewport */}
@@ -63,8 +63,8 @@ const Hero: React.FC = () => {
                 <div className="flex items-center gap-2 mb-2">
                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-lumina-500 text-white uppercase tracking-wider">Editor</span>
                 </div>
-                <h3 className="text-2xl font-semibold text-off-white tracking-tight mb-1">Pixel Perfect</h3>
-                <p className="text-sm text-cool-gray line-clamp-2 leading-relaxed">
+                <h3 className="text-xl md:text-2xl font-semibold text-off-white tracking-tight mb-1">Pixel Perfect</h3>
+                <p className="text-xs md:text-sm text-cool-gray line-clamp-2 leading-relaxed">
                   Advanced vector editing with GPU acceleration.
                 </p>
               </div>
@@ -80,10 +80,10 @@ const Hero: React.FC = () => {
                       Collaborate
                   </span>
                 </div>
-                <h3 className="text-2xl font-semibold text-off-white tracking-tight mb-1">
+                <h3 className="text-xl md:text-2xl font-semibold text-off-white tracking-tight mb-1">
                   Team Sync
                 </h3>
-                <p className="text-sm text-cool-gray line-clamp-2 leading-relaxed">
+                <p className="text-xs md:text-sm text-cool-gray line-clamp-2 leading-relaxed">
                   Real-time multiplayer editing for your entire product team.
                 </p>
               </div>
@@ -94,35 +94,35 @@ const Hero: React.FC = () => {
           <div className="grid grid-cols-2 gap-2 mt-2.5">
             <button 
               onClick={() => setActiveSlide('design')}
-              className={`flex items-center gap-3 p-3 rounded-lg border transition-all duration-300 text-left group ${activeSlide === 'design' ? 'bg-white/10 border-white/10' : 'bg-transparent border-transparent hover:bg-white/5'}`}
+              className={`flex items-center gap-2 md:gap-3 p-2 md:p-3 rounded-lg border transition-all duration-300 text-left group ${activeSlide === 'design' ? 'bg-white/10 border-white/10' : 'bg-transparent border-transparent hover:bg-white/5'}`}
             >
-              <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 shadow-lg ${activeSlide === 'design' ? 'bg-lumina-500 text-white shadow-lumina-500/10' : 'bg-white/5 text-cool-gray'}`}>
-                <Layers className="w-3.5 h-3.5" />
+              <div className={`w-6 h-6 md:w-8 md:h-8 rounded-lg flex items-center justify-center transition-all duration-300 shadow-lg ${activeSlide === 'design' ? 'bg-lumina-500 text-white shadow-lumina-500/10' : 'bg-white/5 text-cool-gray'}`}>
+                <Layers className="w-3 md:w-3.5 h-3 md:h-3.5" />
               </div>
               <div className="flex flex-col">
-                <span className={`text-xs font-semibold tracking-wide transition-colors ${activeSlide === 'design' ? 'text-off-white' : 'text-cool-gray'}`}>Design</span>
-                <span className="text-[10px] font-medium text-cool-gray tracking-wider uppercase">Vector & Raster</span>
+                <span className={`text-[10px] md:text-xs font-semibold tracking-wide transition-colors ${activeSlide === 'design' ? 'text-off-white' : 'text-cool-gray'}`}>Design</span>
+                <span className="hidden md:inline-block text-[10px] font-medium text-cool-gray tracking-wider uppercase">Vector & Raster</span>
               </div>
             </button>
 
             <button 
               onClick={() => setActiveSlide('workspace')}
-              className={`flex items-center gap-3 p-3 rounded-lg border transition-all duration-300 text-left group ${activeSlide === 'workspace' ? 'bg-white/10 border-white/10' : 'bg-transparent border-transparent hover:bg-white/5'}`}
+              className={`flex items-center gap-2 md:gap-3 p-2 md:p-3 rounded-lg border transition-all duration-300 text-left group ${activeSlide === 'workspace' ? 'bg-white/10 border-white/10' : 'bg-transparent border-transparent hover:bg-white/5'}`}
             >
-              <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 border border-white/5 shadow-lg ${activeSlide === 'workspace' ? 'bg-blue-500 text-white' : 'bg-white/5 text-cool-gray'}`}>
-                <Monitor className="w-3.5 h-3.5" />
+              <div className={`w-6 h-6 md:w-8 md:h-8 rounded-lg flex items-center justify-center transition-all duration-300 border border-white/5 shadow-lg ${activeSlide === 'workspace' ? 'bg-blue-500 text-white' : 'bg-white/5 text-cool-gray'}`}>
+                <Monitor className="w-3 md:w-3.5 h-3 md:h-3.5" />
               </div>
               <div className="flex flex-col">
-                <span className={`text-xs font-semibold tracking-wide transition-colors ${activeSlide === 'workspace' ? 'text-off-white' : 'text-cool-gray'}`}>Workspace</span>
-                <span className="text-[10px] font-medium text-cool-gray tracking-wider uppercase">Live Sync</span>
+                <span className={`text-[10px] md:text-xs font-semibold tracking-wide transition-colors ${activeSlide === 'workspace' ? 'text-off-white' : 'text-cool-gray'}`}>Workspace</span>
+                <span className="hidden md:inline-block text-[10px] font-medium text-cool-gray tracking-wider uppercase">Live Sync</span>
               </div>
             </button>
           </div>
         </div>
       </div>
       
-      {/* Background Beams */}
-       <div className="fixed z-0 pointer-events-none flex opacity-60 w-full max-w-7xl border-white/5 border-r mr-auto ml-auto top-0 right-0 bottom-0 left-0">
+      {/* Background Beams - Hidden on Mobile */}
+       <div className="fixed z-0 pointer-events-none flex opacity-60 w-full max-w-7xl border-white/5 border-r mr-auto ml-auto top-0 right-0 bottom-0 left-0 hidden md:flex">
         <div className="flex-1 border-l border-white/5 h-full relative overflow-hidden">
             <span className="absolute bottom-8 left-4 text-white/10 text-xs font-mono">01</span>
         </div>

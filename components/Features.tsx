@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
     PenTool, Box, Users, Layers, ChevronRight, Check, ArrowRight, 
@@ -115,8 +116,8 @@ const Features: React.FC = () => {
     }, [activeSubId, activeCatId]);
 
     return (
-        <div id="features" className="z-10 flex flex-col md:px-10 lg:py-32 w-full max-w-7xl border-white/5 border-t mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 relative">
-             <div className="flex justify-start mb-12 animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.2s_both] [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.3s_both] [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.4s_both]">
+        <div id="features" className="z-10 flex flex-col px-6 md:px-10 py-16 lg:py-32 w-full max-w-7xl border-white/5 border-t mr-auto ml-auto relative">
+             <div className="flex justify-start mb-8 md:mb-12 animate-on-scroll [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.2s_both] [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.3s_both] [animation:fadeSlideIn_1s_cubic-bezier(0.2,0.8,0.2,1)_0.4s_both]">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm text-lumina-400 text-sm font-medium tracking-wide uppercase hover:bg-white/10 transition-colors cursor-default">
                     <Zap className="w-4 h-4 fill-lumina-500/50" />
                     <span>Explore the Suite</span>
@@ -130,7 +131,7 @@ const Features: React.FC = () => {
                     
                     {/* Sidebar */}
                     <div className="lg:col-span-4 lg:border-b-0 lg:border-r flex flex-col bg-black/20 border-white/5 border-b pt-6 pr-6 pb-6 pl-6 gap-x-2 gap-y-2">
-                        <h2 className="text-xl font-semibold text-off-white mb-6 px-2 tracking-tight">Modules</h2>
+                        <h2 className="text-xl font-semibold text-off-white mb-4 md:mb-6 px-2 tracking-tight">Modules</h2>
                         
                         {CATEGORIES.map(cat => (
                             <div key={cat.id} className="flex flex-col gap-1 w-full relative">
@@ -167,24 +168,24 @@ const Features: React.FC = () => {
                     </div>
 
                     {/* Content Area */}
-                    <div className="min-h-[600px] lg:col-span-8 md:p-10 bg-gradient-to-bl from-black/0 via-black/10 to-black/0 px-8 py-8 relative">
+                    <div className="min-h-[500px] md:min-h-[600px] lg:col-span-8 md:p-10 bg-gradient-to-bl from-black/0 via-black/10 to-black/0 px-6 py-8 relative">
                         {activeData && (
                             <div key={activeSubId} className="animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_both]">
-                                <div className="flex items-start gap-5 mb-8 animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_both]">
-                                    <div className="w-16 h-16 rounded-2xl bg-lumina-500/10 flex items-center justify-center border border-lumina-500/20 shadow-[0_0_30px_rgba(255,45,85,0.1)]">
-                                        <Layers className="w-8 h-8 text-lumina-500" />
+                                <div className="flex items-start gap-5 mb-6 md:mb-8 animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_both]">
+                                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-lumina-500/10 flex items-center justify-center border border-lumina-500/20 shadow-[0_0_30px_rgba(255,45,85,0.1)]">
+                                        <Layers className="w-6 h-6 md:w-8 md:h-8 text-lumina-500" />
                                     </div>
                                     <div>
-                                        <h3 className="text-3xl font-semibold text-off-white tracking-tight mb-1">{activeData.title}</h3>
-                                        <p className="font-medium text-lumina-500">{activeData.subtitle}</p>
+                                        <h3 className="text-2xl md:text-3xl font-semibold text-off-white tracking-tight mb-1">{activeData.title}</h3>
+                                        <p className="font-medium text-lumina-500 text-sm md:text-base">{activeData.subtitle}</p>
                                     </div>
                                 </div>
 
-                                <p className="text-cool-gray leading-relaxed mb-10 text-sm md:text-base max-w-2xl animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_0.1s_both]">
+                                <p className="text-cool-gray leading-relaxed mb-8 md:mb-10 text-sm md:text-base max-w-2xl animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_0.1s_both]">
                                     {activeData.desc}
                                 </p>
 
-                                <div className="mb-10 animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_0.2s_both]">
+                                <div className="mb-8 md:mb-10 animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_0.2s_both]">
                                     <h4 className="text-off-white font-medium mb-4 flex items-center gap-2">
                                         <span className="w-1 h-4 bg-lumina-500 rounded-full"></span>
                                         Specifications
@@ -196,14 +197,14 @@ const Features: React.FC = () => {
                                                     {req.icon}
                                                     <span className="text-xs uppercase tracking-wider font-semibold">{req.label}</span>
                                                 </div>
-                                                <div className="text-white font-semibold">{req.val}</div>
+                                                <div className="text-white font-semibold text-sm md:text-base">{req.val}</div>
                                                 <div className="text-cool-gray/70 text-xs mt-0.5">{req.sub}</div>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
 
-                                <div className="mb-10 animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_0.3s_both]">
+                                <div className="mb-8 md:mb-10 animate-on-scroll [animation:fadeSlideIn_0.4s_cubic-bezier(0.2,0.8,0.2,1)_0.3s_both]">
                                     <h4 className="text-off-white font-medium mb-4 flex items-center gap-2">
                                         <span className="w-1 h-4 bg-lumina-500 rounded-full"></span>
                                         Key Features
